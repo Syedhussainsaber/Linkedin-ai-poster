@@ -17,7 +17,15 @@ async function generatePostContent() {
   ];
   const topic = topics[Math.floor(Math.random() * topics.length)];
 
-  const prompt = `Write a short, engaging LinkedIn post about ${topic}. Use 2-3 relevant hashtags. Keep it professional and friendly.`;
+  const prompt = `Write a professional and engaging LinkedIn post about ${topic}. 
+Follow this structure:
+- Start with a bold question or statement as a hook.
+- Add 2–3 short paragraphs explaining key insights or tips (use simple, clear language).
+- Use 1–2 relevant emojis naturally (but keep it professional).
+- End with a short call-to-action encouraging comments or discussion.
+- Add 2–3 relevant hashtags on the last line.
+Keep the tone friendly, professional, and authentic. Use clean spacing and formatting to improve readability. Do NOT write a title — just the post content.`;
+
 
   const result = await model.generateContent(prompt);
   const response = await result.response;
